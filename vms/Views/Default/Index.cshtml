@@ -1,0 +1,134 @@
+﻿@model vms.entity.models.User
+@{
+    ViewData["Title"] = "Log In";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+
+        #slideSource.fade {
+  opacity: 1;
+  transition: opacity 4s; 
+  position:relative;
+}
+
+#slideSource {
+  opacity: 0;
+}
+    </style>
+    <title>Welcome to FutureSoftBD</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Tool Sign In Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Stylesheets -->
+    <link href="~/login/css/style.css" rel='stylesheet' type='text/css' />
+    <!--// Stylesheets -->
+    <!--fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+    <!--//fonts-->
+</head>
+
+<body>
+    <div class="slideSource" id="slideSource">
+        <h1>Welcome Back </h1>
+
+        <div class="w3ls-login box box--big">
+            <!-- form starts here -->
+            <form id="pform" action="/" class="login100-form validate-form" method="post">
+                <div class="agile-field-txt">
+                    <label> Username</label>
+                    <input asp-for="UserName" class="input100" type="text" autocomplete="off" placeholder="Username" name="username" required />
+                </div>
+                <div class="agile-field-txt">
+                    <label> password</label>
+                    <input asp-for="Password" type="password" class="input100" autocomplete="off" placeholder="Password" name="password" id="myInput" required />
+                    <div class="agile_label">
+                        <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+                        <label class="check" for="check3">Show password</label>
+                    </div>
+                    <div class="agile-right">
+                        <a href="#">forgot password?</a>
+                    </div>
+                </div>
+                <!-- script for show password -->
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myInput");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+
+
+                      
+                        document.getElementById('handle').onclick = function () {
+                           
+                        }
+                    }
+
+
+                    window.onload = function () {
+   var slideSource = document.getElementById('slideSource');
+                       setTimeout(function(){ slideSource.classList.toggle('fade'); }, 1000);  
+                           
+
+
+                  
+  var pos = 550;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 0) {
+      clearInterval(id);
+    } else {
+      pos--; 
+      
+      slideSource.style.left = pos + "px"; 
+    }
+  }
+
+
+ };
+
+                </script>
+
+                <div class="w3ls-bot">
+                    <div class="switch-agileits">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                            keep me signed in
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" value="SIGN IN">
+            </form>
+        </div>
+
+        <div class="copy-wthree">
+            <p>
+                &copy Developed By Future Soft. BD
+                @*<a href="http://w3layouts.com/" target="_blank">W3layouts</a>*@
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+    
+    

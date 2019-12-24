@@ -1,0 +1,150 @@
+﻿@model vms.entity.viewModels.VmExpence
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="single-product-tab-area mg-tb-15">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <form asp-action="Create">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="review-tab-pro-inner">
+                            <ul id="myTab3" class="tab-review-design">
+                                <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i> New Expense</a></li>
+                                @*<li><a href="#reviews"><i class="fa fa-file-image-o" aria-hidden="true"></i> Pictures</a></li>
+                                    <li><a href="#INFORMATION"><i class="fa fa-commenting" aria-hidden="true"></i> Review</a></li>*@
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in" id="description">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+
+                                                Expense Date  :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    <input asp-for="ExpenceDate" class="form-control" placeholder="ExpenceDate" type="date" />
+
+                                                </div>
+
+                                                SELECT Expence Type :
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    @Html.DropDownListFor(x => Model.ExpenceTypeId, new SelectList(Model.Types, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+
+
+                                                </div>
+
+                                                SELECT Employe :
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    @Html.DropDownListFor(x => Model.ExpencePerson, new SelectList(Model.Employes, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+
+                                                </div>
+
+                                                Amount  :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    <input asp-for="ExpenceAmount" class="form-control" placeholder="ExpenceAmount" />
+
+                                                </div>
+
+                                                Remarks  :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    <input asp-for="ExpencePurpose" class="form-control" placeholder="ExpencePurpose" />
+
+                                                </div>
+
+
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <input id="check3" name="check3" type="checkbox" value="show password" onclick="Pay()">
+                                                    <label class="check" for="check3">Pay Now</label>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section" id="paypart" style="display:none">
+                                                Payment Type :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    @Html.DropDownListFor(x => Model.Payment.PaymentMethodId, new SelectList(Model.pType, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+
+                                                </div>
+
+                                                Paid Amount  :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    <input asp-for="Payment.AmountPaid" class="form-control" placeholder="Paid Amount" />
+
+                                                </div>
+
+                                                Transaction ID  :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    <input asp-for="Payment.TransactionId" class="form-control" placeholder="Transaxtion ID" />
+
+                                                </div>
+
+                                                Remarks :
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                                                    <input asp-for="Payment.Remark" class="form-control" placeholder="Remarks" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                                    <button type="submit" data-requiredconfirmation="true" class="btn btn-primary waves-effect waves-light m-r-10">
+                                                        Save
+                                                    </button>
+
+                                                    <a asp-action="Index" class="btn btn-warning waves-effect waves-light">Discard</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+    function Pay() {
+        var x = document.getElementById("paypart");
+        var y = document.getElementById("check3");
+
+
+
+        if (y.checked == true) {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+
+    }
+
+
+</script>

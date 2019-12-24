@@ -1,0 +1,52 @@
+﻿@model vms.entity.viewModels.VmDuePayment
+
+@{
+    ViewData["Title"] = "PurchasePayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h1 class="custom-page-title">Purchase Payment</h1>
+            
+            <h3>@ViewData["Message"]</h3>
+            <input type="hidden" asp-for="PurchaseId" />
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form asp-action="PurchasePayment" class="form-horizontal" id="frmusercreate">
+                        <div class="form-body">
+
+                            <div>
+                                @await Html.PartialAsync("DuePaymentPartial", Model)
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                    <button type="submit" data-requiredconfirmation="true" class="btn btn-primary waves-effect waves-light m-r-10">
+                                        Save
+                                    </button>
+
+                                    <a asp-action="Index" class="btn btn-warning waves-effect waves-light">Discard</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+           
+
+ </div>

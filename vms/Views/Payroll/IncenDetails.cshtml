@@ -1,0 +1,102 @@
+﻿@model IEnumerable<vms.entity.models.Incentive>
+
+@{
+    ViewData["Title"] = "Payroll Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Inventory.Utility
+
+
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Pay-Roll Incentive History</h4>
+
+                    @{
+
+                        decimal count = 0;
+                    }
+
+
+                    <br />
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    Create Time
+                                </th>
+                                <th class="text-center">
+                                    Name
+                                </th>
+                                <th class="text-center">
+                                    Date 
+                                </th>
+                                <th class="text-center">
+                                    Amount
+                                </th>
+
+                            </tr>
+                        </thead>
+
+                        @if (Model.Any())
+                        {
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreatedTime)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Employ.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CreatedTime)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IncentivePoint)
+
+                                            @{
+
+                                                count += item.IncentivePoint;
+                                            }
+
+
+                                        </td>
+
+
+                                    </tr>
+                                }
+
+
+
+                                <tr>
+                                    <td colspan="3">
+                                        <p style="text-align: center">Total :</p>
+                                    </td>
+
+                                    <td>
+                                        @count
+                                    </td>
+                                </tr>
+                            </tbody>
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    <p style="text-align: center">No Records Found</p>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

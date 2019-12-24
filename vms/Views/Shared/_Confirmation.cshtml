@@ -1,0 +1,23 @@
+﻿@using Inventory.Utility
+@using vms.entity.viewModels
+@{
+    var session = Context.Session.GetComplexData<vms.entity.viewModels.vmSession>("session");
+}
+
+<div id="uxGlobalConfirmation" class="modal col-xs-12">
+    <div class="conf modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-header-confirmation" style="background: @session.secThe; color:white">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><div>×</div></button>
+                <h4 id="uxModalTitle" class="modal-title">Modal title</h4>
+            </div>
+            <div class="conf modal-body">
+                <p id="uxConfMessage"></p>
+            </div>
+            <div class="conf modal-footer">
+                <button id="uxModalBtnClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="uxModalBtnSave" type="button" class="btn " style="background: @session.secThe; color:white">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

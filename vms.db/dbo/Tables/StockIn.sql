@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[StockIn] (
+    [StockInId]                BIGINT          IDENTITY (1, 1) NOT NULL,
+    [OrganizationId]           INT             NOT NULL,
+    [ProductId]                INT             NOT NULL,
+    [ProductionReceiveId]      BIGINT          NULL,
+    [PurchaseDetailId]         INT             NULL,
+    [InitialQuantity]          DECIMAL (18, 2) NULL,
+    [InQuantity]               DECIMAL (18, 2) NOT NULL,
+    [InitUnitPriceWithoutVat]  DECIMAL (18, 2) NULL,
+    [EndUnitPriceWithoutVat]   DECIMAL (18, 2) NULL,
+    [MeasurementUnitId]        INT             NOT NULL,
+    [SaleQuantity]             DECIMAL (18, 2) NOT NULL,
+    [DamageQuantity]           DECIMAL (18, 2) NOT NULL,
+    [UsedInProductionQuantity] DECIMAL (18, 2) NOT NULL,
+    [PurchaseReturnQty]        DECIMAL (18, 2) NOT NULL,
+    [SalesReturnQty]           DECIMAL (18, 2) NOT NULL,
+    [CurrentStock]             AS              ((((([InQuantity]-[SaleQuantity])-[DamageQuantity])-[UsedInProductionQuantity])-[PurchaseReturnQty])+[SalesReturnQty]),
+    [IsActive]                 BIT             NOT NULL,
+    [CreatedBy]                INT             NULL,
+    [CreatedTime]              DATETIME        NULL,
+    CONSTRAINT [PK_StockIn] PRIMARY KEY CLUSTERED ([StockInId] ASC),
+    CONSTRAINT [FK_StockIn_MeasurementUnits] FOREIGN KEY ([MeasurementUnitId]) REFERENCES [dbo].[MeasurementUnits] ([MeasurementUnitId]),
+    CONSTRAINT [FK_StockIn_Organizations] FOREIGN KEY ([OrganizationId]) REFERENCES [dbo].[Organizations] ([OrganizationId]),
+    CONSTRAINT [FK_StockIn_ProductionReceive] FOREIGN KEY ([ProductionReceiveId]) REFERENCES [dbo].[ProductionReceive] ([ProductionReceiveId]),
+    CONSTRAINT [FK_StockIn_Products] FOREIGN KEY ([ProductId]) REFERENCES [dbo].[Products] ([ProductId]),
+    CONSTRAINT [FK_StockIn_PurchaseDetails] FOREIGN KEY ([PurchaseDetailId]) REFERENCES [dbo].[PurchaseDetails] ([PurchaseDetailId])
+);
+

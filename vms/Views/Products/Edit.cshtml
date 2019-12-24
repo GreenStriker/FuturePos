@@ -1,0 +1,90 @@
+﻿@model vms.entity.models.Product
+@{
+    ViewData["Title"] = "Edit";
+    
+}
+<div class="single-product-tab-area mg-tb-15">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="custom-page-title">Edit Product</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form asp-action="Edit" class="form-horizontal" id="frmusercreate" enctype="multipart/form-data">
+                        <input asp-for="ProductId" type="hidden" />
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Name : </label>
+                                <div class="col-md-4">
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">M. Unit : </label>
+                                <div class="col-md-4">
+
+                                    @Html.DropDownListFor(x => Model.MunitId, new SelectList(Model.MeasurementUnits, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+                                    <span asp-validation-for="MunitId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Vat : </label>
+                                <div class="col-md-4">
+
+                                    @Html.DropDownListFor(x => Model.VatId, new SelectList(Model.ProductVattypes, "Id", "Name"), htmlAttributes: new { @class = "form-control" })
+                                    <span asp-validation-for="VatId" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Code : </label>
+                                <div class="col-md-4">
+                                    <input asp-for="Code" class="form-control" />
+                                    <span asp-validation-for="Code" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Model No : </label>
+                                <div class="col-md-4">
+                                    <input asp-for="ModelNo" class="form-control" />
+                                    <span asp-validation-for="ModelNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Image : </label>
+                                <div class="col-md-4">
+                                    <input type="file" id="UploadFile" name="UploadFile" />
+                                    <label></label>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                        <button type="submit" data-requiredconfirmation="true" class="btn btn-primary waves-effect waves-light m-r-10">
+                                            Save
+                                        </button>
+
+                                        <a asp-action="Index" class="btn btn-warning waves-effect waves-light">Discard</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
