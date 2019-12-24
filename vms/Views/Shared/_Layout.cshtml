@@ -1,0 +1,374 @@
+﻿@using Inventory.Utility
+@using vms.entity.viewModels
+@{
+    var session = Context.Session.GetComplexData<vms.entity.viewModels.vmSession>("session");
+}
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewData["Title"] - FutureSoftBD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    @*<link href="~/login/css/style.css" rel='stylesheet' type='text/css' />*@
+    <link href="~/css/ajaxLoader.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/owl.theme.css">
+    <link rel="stylesheet" href="~/css/owl.transitions.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <!-- meanmenu icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/meanmenu.min.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/main.css">
+    <!-- morrisjs CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="~/css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="~/css/calendar/fullcalendar.print.min.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/style.css">
+    <link href="~/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/css/typeahead.css" rel="stylesheet" />
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/responsive.css">
+
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+
+
+    <style>
+
+        .footer-copyright-area {
+            background: -webkit-linear-gradient(178deg, @session.secThe 0%, @session.FristThe 100%);
+            background: linear-gradient(178deg, @session.secThe 0%, @session.FristThe 100%);
+         
+        }
+
+
+        .header-top-area {
+           
+            background: -webkit-linear-gradient(178deg, @session.secThe 0%, @session.FristThe 100%);
+            background: linear-gradient(178deg, @session.secThe 0%, @session.FristThe 100%);
+          
+        }
+
+        .header-top-menu .navbar-nav > li .dropdown-menu, .header-right-info ul.header-right-menu li .author-message-top, .header-right-info ul.header-right-menu li .notification-author, .header-right-info ul.header-right-menu li .author-log, .header-right-info ul.header-right-menu li .admintab-wrap.menu-setting-wrap.menu-setting-wrap-bg.dropdown-menu {
+            background: @session.FristThe;
+        }
+
+            .header-top-menu .navbar-nav > li .dropdown-menu a:hover, .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:hover, .header-right-info ul.header-right-menu li .dropdown-header-top.author-log li a:focus, .header-drl-controller-btn.btn-info:active:focus, .btn-info:active:hover {
+                background: @session.thirdThe;
+            }
+        .menu-setting-wrap.menu-setting-wrap-bg .nav-tabs>li.active>a, .menu-setting-wrap.menu-setting-wrap-bg .nav-tabs>li.active>a:focus, .menu-setting-wrap.menu-setting-wrap-bg .nav-tabs>li.active>a:hover
+ .notes-img {
+    background: @session.thirdThe;
+}
+        .sidebar-nav .metismenu a:hover,
+        .sidebar-nav .metismenu a:focus,
+        .sidebar-nav .metismenu a:active {
+            /*color: #f8f9fa;
+            text-decoration: none;*/
+            background: @session.thirdThe;
+        }
+
+        #myTab3.tab-review-design li.active a:before, #myTab4.tab-review-design li.active a:before {
+    /*position: absolute;
+    bottom: -15px;
+    left: 0px;
+    width: 80%;
+    height: 2px;*/
+    background: @session.FristThe;
+    /*content: "";
+	transition:all .4s ease 0s;*/
+}
+        .add-product a {
+            /*float: right;
+            position: absolute;
+            top: 14px;
+            right: 50px;*/
+            background: -webkit-linear-gradient(178deg, @session.thirdThe 0%, @session.secThe 100%);
+            background: linear-gradient(178deg, @session.thirdThe 0%, @session.secThe 100%);
+            /*padding: 6px 20px;
+            color: #fff;
+            border-radius: 4px;*/
+        }
+
+
+        .custom-pro-edt-ds .btn-primary {
+           background: @session.FristThe;
+	     border-color: @session.FroreThe;
+             }
+
+        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: @session.FristThe;
+    border-color: @session.thirdThe;
+}
+        /* switch */
+
+        label.switch {
+            position: relative;
+            display: inline-block;
+            height: 23px;
+            padding-left: 3.8em;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        li:nth-child(2) a,
+        label.switch {
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            width: 18%;
+            background-color: #d3d5d7;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 10px;
+        }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 10px;
+                width: 10px;
+                left: 4px;
+                bottom: 5px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+        input:checked + .slider {
+            background-color: @session.secThe ;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #00ba9d;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(18px);
+            -ms-transform: translateX(18px);
+            transform: translateX(18px);
+        }
+
+        /* Rounded sliders */
+
+        .slider.round:before {
+            border-radius: 0%;
+            border-radius: 10px;
+        }
+
+        /* //switch */
+
+        .form-end {
+            float: right;
+            width: 35%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <partial name="_LeftPanelPartial" />
+
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="logo-pro">
+                        <a href="index.html"><img class="main-logo" src="~/img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <partial name="_HeaderPartial" />
+
+        <div class="" style="margin-top:30px;">
+
+
+
+        </div>
+        @RenderBody()
+
+        <partial name="_FooterPartial" />
+        <partial name="_Confirmation" />
+
+
+
+        <script src="~/js/LevelPlugins.js"></script>
+        <script src="~/js/toaster.js"></script>
+        <link href="~/css/toastr.css" rel="stylesheet" />
+
+        <environment include="Development">
+            <script src="~/js/validation.js"></script>
+        </environment>
+        <environment include="Production">
+
+            <script src="~/js/validation.min.js"></script>
+        </environment>
+
+
+
+
+
+
+        <script>
+            $(function () {
+
+                var url = window.location.pathname,
+                    urlRegExp = new RegExp(url.replace(/\/$/, '') + "$", 'i'); // create regexp to match current url pathname and remove trailing slash if present as it could collide with the link in navigation in case trailing slash wasn't present there
+                // now grab every link from the navigation
+                $('a.nav-link').each(function () {
+                    // and test its normalized href against the url pathname regexp
+                    if (urlRegExp.test(this.href.replace(/\/$/, ''), 'i')) {
+                        $(this).parent().addClass('active');
+                    }
+                });
+
+                $("li.active").parent().parent(".nav-item").addClass("open active");
+                $("li.active").parent().parent().parent().parent(".nav-item").addClass("open active");
+
+            });
+        </script>
+
+        @RenderSection("Scripts", required: false)
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("[data-requiredconfirmation=true]").click(function () {
+
+                var tag = '';
+                var tagname = '';
+
+                tag = this;
+                tagname = $(tag).get(0).tagName.toLowerCase();
+                $("#uxConfMessage").empty();
+                $("#uxModalTitle").empty();
+                $("#uxModalTitle").html($(tag).text());
+
+                $(tag).closest('form').data("validator").settings.submitHandler = function (form) {
+                    //alert('submit');
+                    //form.submit();
+                    $("#uxConfMessage").html("You are about to " + $(tag).text() + " this");
+                    $("#uxGlobalConfirmation").show();
+
+                    $("#uxModalBtnSave").click(function () {
+                        if (tagname == "button") {
+                            form.submit();
+                        }
+                        else if (tagname == "a") {
+                            var actionUrl = $(tag).attr("data-url");
+                            window.location = actionUrl;
+                        }
+                    });
+                    $("button[data-dismiss='modal']").click(function () {
+                        $("#uxGlobalConfirmation").hide();
+                    });
+
+                };
+
+                //var tag = '';
+                //var tagname = '';
+                //$("[data-requiredconfirmation=true]").click(function () {
+                //    tag = this;
+                //    tagname = $(tag).get(0).tagName.toLowerCase();
+                //    $("#uxConfMessage").empty();
+                //    $("#uxModalTitle").empty();
+                //    $("#uxModalTitle").html($(tag).text());
+                //    $("#uxConfMessage").html("You are about to " + $(tag).text() + " this");
+                //    $("#uxGlobalConfirmation").show();
+                //});
+                //$("#uxModalBtnSave").click(function () {
+                //    if (tagname == "button") {
+                //        $(tag).closest('form').submit();
+                //    }
+                //    else if (tagname == "a") {
+                //        var actionUrl = $(tag).attr("data-url");
+                //        window.location = actionUrl;
+                //    }
+                //});
+                //$("button[data-dismiss='modal']").click(function () {
+                //    $("#uxGlobalConfirmation").hide();
+                //});
+
+            });
+        });
+        $(document).ready(function () {
+            if ('@TempData["message"]' != null) {
+
+
+                  if('@TempData["message"]' == "Success"){
+                      toastr.success('Updated Successsfully!');
+
+                      }
+                  else if ('@TempData["message"]' == 'Error') {
+                      toastr.error('Can Not be Processed! Please Check');
+                }
+                else if ('@TempData["message"]' == 'Delete') {
+                      toastr.success('Delete Successsfully!');
+                  }
+            }
+
+    });
+        </script>
+
+
+</body>
+
+</html>

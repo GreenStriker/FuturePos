@@ -1,0 +1,97 @@
+﻿@model vms.entity.models.Employe
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="single-product-tab-area mg-tb-15">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <form asp-action="Edit">
+
+                <input asp-for="EmployeId" class="form-control hidden" placeholder="Branch Name" />
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="review-tab-pro-inner">
+                            <ul id="myTab3" class="tab-review-design">
+                                <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i> Employee EDIT</a></li>
+                                @*<li><a href="#reviews"><i class="fa fa-file-image-o" aria-hidden="true"></i> Pictures</a></li>
+                        <li><a href="#INFORMATION"><i class="fa fa-commenting" aria-hidden="true"></i> Review</a></li>*@
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in" id="description">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                    <input asp-for="Name" class="form-control" placeholder="Branch Name" />
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                                    <input asp-for="Address" class="form-control" placeholder="Address" />
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                                    <input asp-for="Nid" class="form-control" placeholder="Nid" />
+                                                </div>
+
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                                    <select asp-for="Gender" class="form-control">
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                        <option>Jahangir Bhai</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                    <input asp-for="Designation" class="form-control" placeholder="Designation" />
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+                                                    <input asp-for="Mobile" class="form-control" placeholder=" Mobile Number" />
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+                                                    <input asp-for="AlterMobile" class="form-control" placeholder="Alternate Mobile Number" />
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-ticket" aria-hidden="true"></i></span>
+                                                    <input asp-for="Email" class="form-control" placeholder="Email" />
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                                <button type="submit" data-requiredconfirmation="true" class="btn btn-primary waves-effect waves-light m-r-10">
+                                                    Save
+                                                </button>
+
+                                                <a asp-action="Index" class="btn btn-warning waves-effect waves-light">Discard</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+

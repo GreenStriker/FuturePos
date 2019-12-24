@@ -1,0 +1,101 @@
+﻿@model IEnumerable<vms.entity.models.Color>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Inventory.Utility
+@using vms.entity.viewModels
+@{
+    // var session = Context.Session.GetComplexData<vms.entity.viewModels.vmSession>("session");
+}
+
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>VAT List</h4>
+                    @*@using (Html.BeginForm("Index", "vat", FormMethod.Get, new { id = "frmProduct" }))
+                    {
+                        <div class="row">
+
+                            <div class="col-md-5">
+                                <div class="input-group Search" style="margin-top:10px">
+                                    <input type="text" class="form-control" placeholder="Search..." id="search" name="search" value="@ViewBag.searchText">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn submit ">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="add-product">
+                                <a href="@Url.Action("Create", "vat")" class="btn btn-success btn-sm pull-right"><i class="fa fa-plus"></i> Add</a>
+                            </div>
+
+                        </div>
+                    }*@
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    Color Name
+                                </th>
+                                <th class="text-center">
+                                    Primary
+                                </th>
+                               
+                                <th>Set Active</th>
+                            </tr>
+                        </thead>
+
+                        @if (Model.Any())
+                        {
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            <button style="background-color: @Html.DisplayFor(modelItem => item.Sec) ; color:white" class="btn"> Sample </button>
+                                        </td>
+                                      
+
+
+                                        <td>
+
+                                            
+                                            <button data-toggle="tooltip" title="SET ACTIVE" class="pd-setting-ed">  <a asp-action="Edit" asp-route-id="@item.ColorId"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> </button>
+
+                                          
+
+
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    <p style="text-align: center">No Records Found</p>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

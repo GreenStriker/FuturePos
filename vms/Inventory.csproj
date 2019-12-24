@@ -1,0 +1,268 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Views\AddressInfo\**" />
+    <Compile Remove="Views\Authentication\**" />
+    <Compile Remove="Views\BasicInfo\**" />
+    <Compile Remove="Views\Contact\**" />
+    <Compile Remove="Views\ContraVoucher\**" />
+    <Compile Remove="Views\Delivery\**" />
+    <Compile Remove="Views\Home\**" />
+    <Compile Remove="Views\Inventory\**" />
+    <Compile Remove="Views\IssueMaterial\**" />
+    <Compile Remove="Views\JournalVoucher\**" />
+    <Compile Remove="Views\Journal\**" />
+    <Compile Remove="Views\Jurnal\**" />
+    <Compile Remove="Views\ListOfProducts\**" />
+    <Compile Remove="Views\MeasurementUnits\**" />
+    <Compile Remove="Views\Organization\**" />
+    <Compile Remove="Views\Payment\**" />
+    <Compile Remove="Views\PurchaseCancellations\**" />
+    <Compile Remove="Views\PurchaseOrders\**" />
+    <Compile Remove="Views\PurchaseOrder\**" />
+    <Compile Remove="Views\ReceiveWorkOrder\**" />
+    <Compile Remove="Views\SaleCancellationOrder\**" />
+    <Compile Remove="Views\SaleOrders\**" />
+    <Compile Remove="Views\SaleOrder\**" />
+    <Compile Remove="Views\VatAccounts\**" />
+    <Compile Remove="Views\VendorInfoes\**" />
+    <Compile Remove="wwwroot\Reports\**" />
+    <Content Remove="Views\AddressInfo\**" />
+    <Content Remove="Views\Authentication\**" />
+    <Content Remove="Views\BasicInfo\**" />
+    <Content Remove="Views\Contact\**" />
+    <Content Remove="Views\ContraVoucher\**" />
+    <Content Remove="Views\Delivery\**" />
+    <Content Remove="Views\Home\**" />
+    <Content Remove="Views\Inventory\**" />
+    <Content Remove="Views\IssueMaterial\**" />
+    <Content Remove="Views\JournalVoucher\**" />
+    <Content Remove="Views\Journal\**" />
+    <Content Remove="Views\Jurnal\**" />
+    <Content Remove="Views\ListOfProducts\**" />
+    <Content Remove="Views\MeasurementUnits\**" />
+    <Content Remove="Views\Organization\**" />
+    <Content Remove="Views\Payment\**" />
+    <Content Remove="Views\PurchaseCancellations\**" />
+    <Content Remove="Views\PurchaseOrders\**" />
+    <Content Remove="Views\PurchaseOrder\**" />
+    <Content Remove="Views\ReceiveWorkOrder\**" />
+    <Content Remove="Views\SaleCancellationOrder\**" />
+    <Content Remove="Views\SaleOrders\**" />
+    <Content Remove="Views\SaleOrder\**" />
+    <Content Remove="Views\VatAccounts\**" />
+    <Content Remove="Views\VendorInfoes\**" />
+    <Content Remove="wwwroot\Reports\**" />
+    <EmbeddedResource Remove="Views\AddressInfo\**" />
+    <EmbeddedResource Remove="Views\Authentication\**" />
+    <EmbeddedResource Remove="Views\BasicInfo\**" />
+    <EmbeddedResource Remove="Views\Contact\**" />
+    <EmbeddedResource Remove="Views\ContraVoucher\**" />
+    <EmbeddedResource Remove="Views\Delivery\**" />
+    <EmbeddedResource Remove="Views\Home\**" />
+    <EmbeddedResource Remove="Views\Inventory\**" />
+    <EmbeddedResource Remove="Views\IssueMaterial\**" />
+    <EmbeddedResource Remove="Views\JournalVoucher\**" />
+    <EmbeddedResource Remove="Views\Journal\**" />
+    <EmbeddedResource Remove="Views\Jurnal\**" />
+    <EmbeddedResource Remove="Views\ListOfProducts\**" />
+    <EmbeddedResource Remove="Views\MeasurementUnits\**" />
+    <EmbeddedResource Remove="Views\Organization\**" />
+    <EmbeddedResource Remove="Views\Payment\**" />
+    <EmbeddedResource Remove="Views\PurchaseCancellations\**" />
+    <EmbeddedResource Remove="Views\PurchaseOrders\**" />
+    <EmbeddedResource Remove="Views\PurchaseOrder\**" />
+    <EmbeddedResource Remove="Views\ReceiveWorkOrder\**" />
+    <EmbeddedResource Remove="Views\SaleCancellationOrder\**" />
+    <EmbeddedResource Remove="Views\SaleOrders\**" />
+    <EmbeddedResource Remove="Views\SaleOrder\**" />
+    <EmbeddedResource Remove="Views\VatAccounts\**" />
+    <EmbeddedResource Remove="Views\VendorInfoes\**" />
+    <EmbeddedResource Remove="wwwroot\Reports\**" />
+    <None Remove="Views\AddressInfo\**" />
+    <None Remove="Views\Authentication\**" />
+    <None Remove="Views\BasicInfo\**" />
+    <None Remove="Views\Contact\**" />
+    <None Remove="Views\ContraVoucher\**" />
+    <None Remove="Views\Delivery\**" />
+    <None Remove="Views\Home\**" />
+    <None Remove="Views\Inventory\**" />
+    <None Remove="Views\IssueMaterial\**" />
+    <None Remove="Views\JournalVoucher\**" />
+    <None Remove="Views\Journal\**" />
+    <None Remove="Views\Jurnal\**" />
+    <None Remove="Views\ListOfProducts\**" />
+    <None Remove="Views\MeasurementUnits\**" />
+    <None Remove="Views\Organization\**" />
+    <None Remove="Views\Payment\**" />
+    <None Remove="Views\PurchaseCancellations\**" />
+    <None Remove="Views\PurchaseOrders\**" />
+    <None Remove="Views\PurchaseOrder\**" />
+    <None Remove="Views\ReceiveWorkOrder\**" />
+    <None Remove="Views\SaleCancellationOrder\**" />
+    <None Remove="Views\SaleOrders\**" />
+    <None Remove="Views\SaleOrder\**" />
+    <None Remove="Views\VatAccounts\**" />
+    <None Remove="Views\VendorInfoes\**" />
+    <None Remove="wwwroot\Reports\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ActionFilter\Logged.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+    <Content Remove="Views\Products\Create -apu.cshtml" />
+    <Content Remove="Views\Sales\SaleCancellations.cshtml" />
+    <Content Remove="Views\Sales\SaleCancellationsAccountsView.cshtml" />
+    <Content Remove="Views\Sales\SaleOrder.cshtml" />
+    <Content Remove="wwwroot\images\ajaxImage.jpg" />
+    <Content Remove="wwwroot\images\arrow_left.gif" />
+    <Content Remove="wwwroot\images\arrow_right.gif" />
+    <Content Remove="wwwroot\images\loader.gif" />
+    <Content Remove="wwwroot\images\Thumbs.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Dashboard.cshtml" />
+    <None Include="Views\Payment\Index.cshtml" />
+    <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\images\ajaxImage.jpg" />
+    <None Include="wwwroot\images\arrow_left.gif" />
+    <None Include="wwwroot\images\arrow_right.gif" />
+    <None Include="wwwroot\images\loader.gif" />
+    <None Include="wwwroot\images\Thumbs.db" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\js\site.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\npm.js" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
+    <PackageReference Include="jQuery" Version="3.4.1" />
+    <PackageReference Include="jQuery.UI.Combined" Version="1.12.1" />
+    <PackageReference Include="jQuery.Validation" Version="1.19.1" />
+    <PackageReference Include="jQuery.Validation.Unobtrusive" Version="2.0.20710" />
+    <PackageReference Include="LiveReload.NET" Version="1.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.1" />
+    <PackageReference Include="typeahead.js-bootstrap.css" Version="0.0.4" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.6.0" />
+    <PackageReference Include="Zen.Barcode.Core" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ActionFilter\" />
+    <Folder Include="wwwroot\assets\apps\img\" />
+    <Folder Include="wwwroot\assets\global\img\portfolio\1200x900\" />
+    <Folder Include="wwwroot\assets\global\img\portfolio\400x300\" />
+    <Folder Include="wwwroot\assets\global\img\portfolio\600x600\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amcharts\patterns\black\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amcharts\patterns\chalk\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amcharts\plugins\export\examples\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amcharts\plugins\responsive\examples\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\ammap\patterns\black\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\ammap\patterns\chalk\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\ammap\patterns\white\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\ammap\plugins\export\examples\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\ammap\plugins\responsive\examples\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amstockcharts\patterns\black\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amstockcharts\patterns\chalk\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amstockcharts\patterns\white\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amstockcharts\plugins\export\examples\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\amcharts\amstockcharts\plugins\responsive\examples\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
+    <Folder Include="wwwroot\assets\global\plugins\bootstrap-colorpicker\img\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\plugins\about\dialogs\hidpi\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\plugins\flash\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\plugins\image\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\plugins\link\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\plugins\magicline\images\hidpi\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\plugins\showblocks\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\ckeditor\skins\moono\images\hidpi\" />
+    <Folder Include="wwwroot\assets\global\plugins\icheck\demo\css\ie\" />
+    <Folder Include="wwwroot\assets\global\plugins\ion.rangeslider\img\" />
+    <Folder Include="wwwroot\assets\global\plugins\jquery-multi-select\img\" />
+    <Folder Include="wwwroot\assets\global\plugins\jquery-ui\images\" />
+    <Folder Include="wwwroot\assets\global\plugins\mapplic\images\apartment\" />
+    <Folder Include="wwwroot\assets\global\plugins\mapplic\images\thumbs\" />
+    <Folder Include="wwwroot\assets\global\plugins\morris\spec\viz\exemplary\" />
+    <Folder Include="wwwroot\assets\global\plugins\owl-carousel\assets\img\demo-slides\" />
+    <Folder Include="wwwroot\assets\global\plugins\socicon\png\" />
+    <Folder Include="wwwroot\assets\layouts\layout5\img\" />
+    <Folder Include="wwwroot\assets\layouts\layout6\img\" />
+    <Folder Include="wwwroot\ApplicationDocument\" />
+    <Folder Include="wwwroot\tooltipHtml\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\vms.entity\inventory.entity.csproj" />
+    <ProjectReference Include="..\vms.ioc\inventory.ioc.csproj" />
+    <ProjectReference Include="..\vms.service\inventory.service.csproj" />
+    <ProjectReference Include="..\vms.utility\inventory.utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Employe\PriceSetup.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\Delete.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\Details.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\Edit.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Products\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Reports\Mushok6P3.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Sales\DetailsNew.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_Confirmation.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Vendor\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+  </Project>

@@ -1,0 +1,134 @@
+﻿@using Inventory.Utility
+@using vms.entity.viewModels
+@{
+//var session = Context.Session.GetComplexData<vms.entity.viewModels.vmSession>("session");
+}<!-- BEGIN SIDEBAR -->
+
+    <div class="left-sidebar-pro">
+        <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <a href="@Url.Action("Dashboard", "Home")"><img class="main-logo" src="~/img/logo/logo.png" alt="" /></a>
+                <strong><img src="~/img/logo/logosn.png" alt="" /></strong>
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li class="active">
+                            <a class="has-arrow" href="index.html">
+                                <i class="fa big-icon fa-home icon-wrap"></i>
+                                <span class="mini-click-non">Home</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <li><a title="Dashboard" href="@Url.Action("Index", "Dashboard")"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Core Setup</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                @*<li><a href="@Url.Action("Index", "Branch")"><i class="fa fa-map-marker sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Branch Setup</span></a></li>*@
+                                <li><a href="@Url.Action("Index", "User")"><i class="fa fa-map-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">User Setup</span></a></li>
+                                <li><a href="@Url.Action("Index", "ContentType")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Content Type</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">Product Setup</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+
+                                <li><a href="@Url.Action("Index", "Products")"><i class="fa fa-file-pdf-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Product Setup</span></a></li>
+
+                                <li><a href="@Url.Action("Index", "MesureUnit")"><i class="fa fa-circle sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Mesurement Unit</span></a></li>
+
+
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">Purchase</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a href="@Url.Action("Index", "Vendor")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Vendors</span></a></li>
+
+                                <li><a href="@Url.Action("Index", "Purchase")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Purchase</span></a></li>
+                                <li><a href="@Url.Action("PurchaseDue", "Purchase")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Purchase Due</span></a></li>
+
+
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">Sale</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a href="@Url.Action("Index", "Customer")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">CustomerSetup</span></a></li>
+
+                                <li><a href="@Url.Action("Index", "Sale")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Sales</span></a></li>
+                                <li><a href="@Url.Action("SalesDue", "Sale")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Sales Due</span></a></li>
+                            </ul>
+                        </li>
+                        @*<li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-pie-chart icon-wrap"></i> <span class="mini-click-non">Human Resources</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a href="@Url.Action("Index", "Employe")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Employee Setup</span></a></li>
+                                <li><a href="@Url.Action("Index", "AdvancedSalary")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Advance Salary</span></a></li>
+                                <li><a href="@Url.Action("Index", "Overtime")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Over Time</span></a></li>
+                                <li><a href="@Url.Action("Index", "Attendence")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Attendence Entry</span></a></li>
+                            </ul>
+                        </li>*@
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span class="mini-click-non">Accounts</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                @*<li><a href="@Url.Action("Index", "Payroll")"><i class="fa fa-fighter-jet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">PayRoll</span></a></li>*@
+                                <li><a href="@Url.Action("Index", "vat")"><i class="fa fa-fighter-jet sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">VAT Setup</span></a></li>
+                                <li><a href="@Url.Action("Index", "Expence")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Expence</span></a></li>
+                                <li><a href="@Url.Action("Index", "ExpenceType")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Expence Type</span></a></li>
+                                <li><a href="@Url.Action("Index", "PaymentMethod")"><i class="fa fa-code sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Payment Methord </span></a></li>
+                                <li><a href="@Url.Action("Index", "Payment")"><i class="fa fa-frown-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Payment History</span></a></li>
+                            </ul>
+                        </li>
+                        @*<li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Customer Relations</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                
+                                <li><a href="@Url.Action("Index", "RewardPoint")"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">RewardPoint</span></a></li>
+                            </ul>
+                        </li>*@
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Reports</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                @*<li><a title="Basic Form Elements" href="basic-form-element.html"><i class="fa fa-pencil sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Bc Form Elements</span></a></li>
+                <li><a title="Advance Form Elements" href="advance-form-element.html"><i class="fa fa-lightbulb-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Ad Form Elements</span></a></li>
+                <li><a title="Password Meter" href="password-meter.html"><i class="fa fa-hourglass sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Password Meter</span></a></li>
+                <li><a title="Multi Upload" href="multi-upload.html"><i class="fa fa-hdd-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Multi Upload</span></a></li>
+                <li><a title="Text Editor" href="tinymc.html"><i class="fa fa-globe sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Text Editor</span></a></li>
+                <li><a title="Dual List Box" href="dual-list-box.html"><i class="fa fa-hand-paper-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dual List Box</span></a></li>*@
+                            </ul>
+                        </li>
+                        @*  <li>
+            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-desktop icon-wrap"></i> <span class="mini-click-non">App views</span></a>
+            <ul class="submenu-angle" aria-expanded="false">
+                <li><a title="Notifications" href="notifications.html"><i class="fa fa-external-link-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Notifications</span></a></li>
+                <li><a title="Alerts" href="alerts.html"><i class="fa fa-crop sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Alerts</span></a></li>
+                <li><a title="Modals" href="modals.html"><i class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modals</span></a></li>
+                <li><a title="Buttons" href="buttons.html"><i class="fa fa-adjust sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Buttons</span></a></li>
+                <li><a title="Tabs" href="tabs.html"><i class="fa fa-eye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Tabs</span></a></li>
+                <li><a title="Accordion" href="accordion.html"><i class="fa fa-life-ring sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Accordion</span></a></li>
+            </ul>
+        </li>
+        <li id="removable">
+            <a class="has-arrow" href="#" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+            <ul class="submenu-angle" aria-expanded="false">
+                <li><a title="Login" href="login.html"><i class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Login</span></a></li>
+                <li><a title="Register" href="register.html"><i class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Register</span></a></li>
+                <li><a title="Lock" href="lock.html"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Lock</span></a></li>
+                <li><a title="Password Recovery" href="password-recovery.html"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Password Recovery</span></a></li>
+            </ul>
+        </li>
+        <li><a title="Landing Page" href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>*@
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+    </div>
+<!-- END SIDEBAR -->

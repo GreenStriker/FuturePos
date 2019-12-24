@@ -1,0 +1,117 @@
+﻿@model IEnumerable<vms.entity.models.Sale>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using vms.entity.viewModels
+@{
+    ViewData["Title"] = "Sale List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Inventory.Utility
+
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Sale List</h4>
+                    @using (Html.BeginForm("Index", "Sale", FormMethod.Get, new { id = "frmSale" }))
+                    {<div class="row">
+
+                            <div class="col-md-5">
+                                <div class="input-group Search" style="margin-top:10px">
+                                    <input type="text" class="form-control" placeholder="Search..." id="search" name="search" value="@ViewBag.searchText">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn submit ">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="add-product">
+                                <a href="@Url.Action("Create", "Sale")" class="btn btn-success btn-sm pull-right"><i class="fa fa-plus"></i> Add</a>
+                            </div>
+
+                        </div>
+                    }
+
+                    <br />
+                    <table class="table  table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Invoice</th>
+                                @*<th>Vendor</th>*@
+                                <th>Payable amount</th>
+                                <th>Branch</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        @if (Model.Any())
+                        {
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.SaleInvoiceNo)
+                                        </td>
+                                        @*<td class="text-center">
+                                            @item.Vendor.Name
+                                        </td>*@
+                                        <td class="text-center">
+                                            @item.PaymentReceiveAmount
+                                        </td>
+                                        <td class="text-center">
+                                            @item.Branch.Name
+                                        </td>
+                                        <td>
+                                            <div class="nav navbar-nav ">
+                                                <div class="dropdown dropdown-user">
+                                                    <a style="text-decoration:none" href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                        <span class="">
+                                                            Action
+                                                            <i class="fa fa-angle-down"></i>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-default pull-right">
+                                                        <li>
+                                                            <a asp-action="Details" asp-route-id="@item.SalesId"><i class="fa fa-info"></i> Details</a>
+                                                        </li>
+                                                        @*<li>
+                                                                <a asp-action="DebitNote" asp-route-id="@item.EncryptedId"><i class="fa fa-money"></i> Debit Note</a>
+                                                            </li>*@
+
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    <p style="text-align: center">No Records Found</p>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    <div class="pager">
+                        @Html.PagedListPager(
+                            (IPagedList)Model,
+                            page => Url.Action("Index", new { page })
+                            )
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

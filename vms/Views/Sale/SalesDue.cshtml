@@ -1,0 +1,137 @@
+﻿@model IEnumerable<vms.entity.models.Sale>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@{
+    ViewData["Title"] = "SalesDue List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Sales Due</h4>
+
+
+                    @using (Html.BeginForm("SalesDue", "Sale", FormMethod.Get, new { id = "frmSale" }))
+                    {<div class="row">
+
+                            <div class="col-md-5">
+                                <div class="input-group Search" style="margin-top:10px">
+                                    <input type="text" class="form-control" placeholder="Search..." id="search" name="search" value="@ViewBag.searchText">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn submit ">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    }
+
+                    <br />
+                    <table class="table  table-bordered table-striped">
+                        <thead>
+                            <tr>
+
+                                <th class="text-center">
+                                    Inv. No.
+                                </th>
+                                <th class="text-center">
+                                    Cus. Name
+                                </th>
+                                <th class="text-center">
+                                    Customer Address
+                                </th>
+                                <th class="text-center">
+                                    Customer Mobile
+                                </th>
+                                <th class="text-left">
+                                    Status
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        @if (Model.Any())
+                        {
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.SaleInvoiceNo)
+                                        </td>
+                                        <td class="text-left">
+                                            @Html.DisplayFor(modelItem => item.Customer.Name)
+                                        </td>
+
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.Customer.Address)
+                                        </td>
+
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.Customer.Mobile)
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <div class="dropdown dropdown-user">
+                                                    <a style="text-decoration:none" href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                        <span class=""> Action </span>
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-default pull-right">
+
+                                                        <li>
+                                                            <a asp-action="SalesPaymentReceive" asp-route-id="@item.SalesId"> <i class="fa fa-money"></i> Add Sales Receive</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    <p style="text-align: center">No Records Found</p>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    <div class="pager">
+                        @if ((int)ViewBag.PageCount <= 10)
+                        {
+
+                        }
+
+                        else
+                        {
+                            @Html.PagedListPager(
+                            (IPagedList)Model,
+                            page => Url.Action("SalesDue", new { page })
+                            )
+                        }
+                    </div>
+
+                </div>
+                   
+            </div>
+                  
+        </div>
+                   
+    
+    </div>
+   
+ </div>

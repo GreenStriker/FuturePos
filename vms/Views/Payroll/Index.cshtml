@@ -1,0 +1,152 @@
+﻿@model IEnumerable<vms.entity.models.Payroll>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Inventory.Utility
+@using vms.entity.viewModels
+@{
+    // var session = Context.Session.GetComplexData<vms.entity.viewModels.vmSession>("session");
+}
+
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Pay-Roll History</h4>
+                    @using (Html.BeginForm("Index", "Payroll", FormMethod.Get, new { id = "frmProduct" }))
+                    {
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="input-group Search" style="margin-top:10px">
+                                <input type="text" class="form-control" placeholder="Search..." id="search" name="search" value="@ViewBag.searchText">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn submit ">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                        @{
+
+                            bool? x = ViewBag.Active;
+
+
+
+
+
+                            if (x == true)
+                            {
+                                <div class="add-product">
+                                    <a href="@Url.Action("Create", "Payroll")" class="btn btn-success btn-sm pull-right"><i class="fa fa-plus"></i> Add</a>
+                                </div>
+                            }
+                            else
+                            {
+
+                                <div class="add-product">
+                                    <a class="btn btn-success btn-sm pull-right"> Currently Payroll Genaretion IS OFF By The Admin</a>
+                                </div>
+                            }
+                        }
+                    </div>
+                    }
+
+
+                    <br />
+                    <table class="table table-bordered table-striped" >
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    Year
+                                </th>
+                                <th class="text-center">
+                                    Month
+                                </th>
+                                <th class="text-center">
+                                    Branch Name
+                                </th>
+                                <th class="text-center">
+                                    Expenced ID
+                                </th>
+
+                                <th class="text-center">
+                                    Amount Paid
+                                </th>
+                                <th>Setting</th>
+                            </tr>
+                        </thead>
+
+                        @if (Model.Any())
+                        {
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Year)
+                                    </td>
+                                    <td>
+                                        @{
+
+                                            int month = Convert.ToInt32(item.Month);
+
+                                            var x = new DateTime(2010, month, 1).ToString("MMMM");
+                                        }
+                                        @x
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Branch.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ExpenceId)
+                                    </td>
+                                    <td>
+
+                                        @*@if(item.Expence.Payment!= null) { 
+                                        @Html.DisplayFor(modelItem => item.Expence.Payment.AmountPaid)
+                                        }*@
+                                    </td>
+
+
+                                    <td>
+
+
+                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed">  <a asp-action="PayrollDetails" asp-route-id="@item.PayrollId"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> </button>
+
+                                        @*<button data-toggle="tooltip" title="Trash" class="pd-setting-ed">    <a asp-action="Delete" asp-route-id="@item.PayrollId"><i class="fa fa-trash-o" aria-hidden="true"></i>    </a></button>*@
+
+
+                                    </td>
+
+                                </tr>
+                                }
+                            </tbody>
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    <p style="text-align: center">No Records Found</p>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    <div class="pager">
+                        @Html.PagedListPager(
+                            (IPagedList)Model,
+                            page => Url.Action("Index", new { page })
+                            )
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

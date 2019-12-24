@@ -1,0 +1,151 @@
+﻿@model vms.entity.models.Setting
+
+@{
+    ViewData["Title"] = "Settings";
+}
+
+
+<div class="single-product-tab-area mg-tb-15">
+    <!-- Single pro tab review Start-->
+    <div class="single-pro-review-area">
+        <div class="container-fluid">
+            <form asp-action="Edit">
+
+                <div class="form-group hidden">
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="review-tab-pro-inner">
+                            <ul id="myTab3" class="tab-review-design">
+                                <li class="active"><a href="#description"><i class="fa fa-pencil" aria-hidden="true"></i> Setting </a></li>
+                              
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in" id="description">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsIncentiveCount" />
+                                                        <span class="slider round"></span>
+                                                        Incentive in Sales
+                                                    </label>
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsrewardPoitCount" />
+                                                        <span class="slider round"></span>
+                                                        Cus. Reward Point
+                                                    </label>
+
+                                                </div>
+
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsadvanceSalary" />
+                                                        <span class="slider round"></span>
+                                                        Advanced Salary
+                                                    </label>
+
+
+                                                </div>
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsOvertime" />
+                                                        <span class="slider round"></span>
+                                                        Overtime Allowed
+                                                    </label>
+
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsattendenceCount" />
+                                                        <span class="slider round"></span>
+                                                        Attendence Count
+                                                    </label>
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsProductDiscount" />
+                                                        <span class="slider round"></span>
+                                                        Product Discount
+                                                    </label>
+                                                </div>
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <label class="switch">
+                                                        <input type="checkbox" asp-for="IsCanGiveSalary" />
+                                                        <span class="slider round"></span>
+                                                        Payroll Genaration
+                                                    </label>
+
+
+                                                </div>
+
+
+                                                <input asp-for="SettingsId" class="hidden" />
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                    <input asp-for="IncentiveRetion" class="form-control" placeholder="Incentive Per 100 tk Sale" />
+                                                </div>
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                    <input asp-for="RewardPointRethio" class="form-control" placeholder="Reward Point Per 100 tk Sale" />
+                                                </div>
+
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                    <input asp-for="AdvanceSalaryPercentage" class="form-control" placeholder="Advanced Salary Percentage " />
+                                                </div>
+
+
+
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                    <input asp-for="OverTimeRatio" class="form-control" placeholder="Over Time Taka Per Houre " />
+                                                </div>
+
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light m-r-10">
+                                                    Save
+                                                </button>
+
+                                                <a asp-action="Index" class="btn btn-warning waves-effect waves-light">Discard</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

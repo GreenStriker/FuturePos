@@ -1,0 +1,52 @@
+
+SELECT 
+		ClientId = tdi.ClientId
+		,c.[Name]
+		,c.[WalletNo]
+		,[ClientType]=c.CType
+		,[ProductName]=p.[Name]
+		,pci.OtherClientType
+		,[ProductId]=ISNULL(pgd.ProductId,-1)
+		,[Items] = CAST(sum(tdi.Quantity) AS decimal(18,2))
+		,[Incentive] = CAST(sum(tdi.Quantity * pci.IncentivePerUnit) AS decimal(18,2))
+		,[Allowence]=CAST(
+			CASE 
+				WHEN 
+					sum(tdi.Quantity) >= pg.AllowanceLevelOneTarget 
+				THEN 
+					--sum((tdi.Quantity * pci.IncentivePerUnit)+pg.AllowanceLevelOneAllowance)
+					sum(pg.AllowanceLevelOneAllowance)
+				ELSE 
+					--sum(tdi.Quantity) * pci.IncentivePerUnit
+					0
+			END AS decimal(18,2)),
+		[AllowenceNext] = CAST(
+			CASE 
+				WHEN 
+					sum(tdi.Quantity) >= pg.AllowanceLevelTwoTarget 
+				THEN 
+					sum(pg.AllowanceLevelTwoAllowance)
+				ELSE 
+					--sum(tdi.Quantity) * pci.IncentivePerUnit
+					0
+			END AS decimal(18,2))
+	FROM TransactionDetailInfo tdi
+	INNER JOIN ProductGroupDetails pgd on pgd.ProductId = tdi.ProductId
+	INNER JOIN ProductGroups pg on pg.ProductGroupId = pgd.ProductGroupId
+	INNER JOIN Clients c on c.WalletNo = tdi.ClientWalletNo
+	INNER JOIN Products p on p.Id = tdi.ProductId
+	INNER JOIN ProductClientTypeIncentive pci on pci.ProductId = p.Id
+	WHERE 1=1
+	--AND tdi.CreatedOn between @FromDate AND @ToDate
+	
+	GROUP BY 
+	tdi.ClientId
+	,c.[Name]
+	,c.[WalletNo]
+	,c.CType
+	,p.[Name]
+	,pg.AllowanceLevelOneTarget
+	,pci.IncentivePerUnit
+	,pgd.ProductId
+	,pg.AllowanceLevelTwoAllowance
+	,pg.AllowanceLevelTwoTarget 

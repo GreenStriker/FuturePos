@@ -1,0 +1,139 @@
+﻿@model IEnumerable<vms.entity.models.PayrollDetail>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@{
+    ViewData["Title"] = "Payroll Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Inventory.Utility
+@using vms.entity.viewModels
+@{
+    // var session = Context.Session.GetComplexData<vms.entity.viewModels.vmSession>("session");
+}
+
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Pay-Roll History</h4>
+                    @using (Html.BeginForm("Index", "PayrollDetails", FormMethod.Get, new { id = "frmProduct" }))
+                    {
+                        <div class="row">
+
+                            <div class="col-md-5">
+                                <div class="input-group Search" style="margin-top:10px">
+                                    <input type="text" class="form-control" placeholder="Search..." id="search" name="search" value="@ViewBag.searchText">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn submit ">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+
+                         
+                        </div>
+                    }
+
+
+                    <br />
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    Name
+                                </th>
+                                <th class="text-center">
+                                    Bank.Acc
+                                </th>
+                                <th class="text-center">
+                                    Salary
+                                </th>
+                                <th class="text-center">
+                                    Atte.Salary
+                                </th>
+
+
+                                <th class="text-center">
+                                    (+)OverTime Amount
+                                </th>
+                                <th class="text-center">
+                                    (+)Incentive Amount
+                                </th>
+                                <th class="text-center">
+                                    (-) Advance Taken
+                                </th>
+                                <th>Payable</th>
+                                <th>Setting</th>
+                            </tr>
+                        </thead>
+
+                        @if (Model.Any())
+                        {
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Employe.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Employe.BanckAccountNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Salary.BaseSalary)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BaseSalary)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OverTimeAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IncentiveAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AdvancedAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PayableSalary)
+                                    </td>
+
+                                    <td>
+
+
+                                        <button data-toggle="tooltip" title="OverDetails" class="pd-setting-ed">  <a asp-action="OverDetails" asp-route-id="@item.PayrollDetailsId"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a> </button>
+
+                                        <button data-toggle="tooltip" title="AdvancedDetails" class="pd-setting-ed">    <a asp-action="AdvancedDetails" asp-route-id="@item.PayrollDetailsId"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>    </a></button>
+                                        <button data-toggle="tooltip" title="IncentiveDetails" class="pd-setting-ed">    <a asp-action="IncenDetails" asp-route-id="@item.PayrollDetailsId"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>    </a></button>
+
+
+                                    </td>
+
+                                </tr>
+                                }
+                            </tbody>
+                        }
+
+                        else
+                        {
+                            <tr>
+                                <td colspan="10">
+                                    <p style="text-align: center">No Records Found</p>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    <div class="pager">
+                        @Html.PagedListPager(
+                            (IPagedList)Model,
+                            page => Url.Action("Index", new { page })
+                            )
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

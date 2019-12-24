@@ -1,0 +1,134 @@
+﻿@model vms.entity.models.Purchase
+
+@{
+    ViewData["Title"] = "Purchase Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="product-status mg-tb-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Purchase List</h4>
+                    <table class="table  table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Invoice</th>
+                                <th>Vendor</th>
+                                <th>Payable amount</th>
+                                <th>Paid amount</th>
+                                <th>Discount on Total</th>
+                                <th>Branch</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">
+                                    @Model.PurchaseInvoice
+                                </td>
+                                <td class="text-center">
+                                    @Model.Vendor.Name
+                                </td>
+                                <td class="text-center">
+                                    @Model.PayableAmount
+                                </td>
+                                <td class="text-center">
+                                    @Model.PaidAmount
+                                </td>
+                                <td class="text-center">
+                                    @Model.DiscountOnTotal
+                                </td>
+                                <td>
+                                    @Model.Branch.Name
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Purchase Details</h4>
+                    <table class="table  table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Unit</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Discount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.PurchaseDetails)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    @item.Product.Name
+                                </td>
+                                <td class="text-center">
+                                    @item.Product.Munit.Name
+                                </td>
+                                <td class="text-center">
+                                    @item.Qty
+                                </td>
+                                <td class="text-center">
+                                    @item.Amount
+                                </td>
+                                <td class="text-center">
+                                    @item.DiscountPerItem
+                                </td>
+                             
+                            </tr>
+                        }
+                      
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h4>Purchase Payment History</h4>
+                    <table class="table  table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Payment Method</th>
+                            <th>Paid Amount</th>
+                            <th>Payment Date</th>
+                           
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.PurchasePayments)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    @item.PaymentMethod.Name
+                                </td>
+                                <td class="text-center">
+                                    @item.PaidAmount
+                                </td>
+                                <td class="text-center">
+                                    @item.PaymentDate.Value.ToShortDateString()
+                                </td>
+
+                            </tr>
+                        }
+                      
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
